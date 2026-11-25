@@ -1,0 +1,77 @@
+=====================================================================
+  03 · GIT + GITHUB PRACTICE  (Git Bash terminal)
+=====================================================================
+Git = saves versions of your code on YOUR laptop.
+GitHub = a website that keeps a copy of your code online.
+
+---- ONE TIME SETUP ----
+
+STEP 1   git config --global user.name "Your Full Name"
+STEP 2   git config --global user.email "the-email-you-used-for-github@gmail.com"
+STEP 3   git config --global --list
+         You should see your name and email.
+
+---- PRACTICE IN A NEW FOLDER ----
+
+STEP 4   cd ~/Desktop
+         (OneDrive laptops:  cd ~/OneDrive/Desktop)
+
+STEP 5   mkdir git-practice
+         cd git-practice
+
+STEP 6   git init
+         Start Git in this folder.
+         You should see:  Initialized empty Git repository ...
+
+STEP 7   echo "# My first repo" > README.md
+
+STEP 8   git status
+         You should see:  README.md in RED  (= Git sees it, not saved yet)
+
+STEP 9   git add .
+         Get ALL changed files ready to save.  ( . means everything here )
+
+STEP 10  git status
+         You should see:  README.md in GREEN  (= ready to save)
+
+STEP 11  git commit -m "first commit"
+         Save a version, with a message.
+         You should see:  1 file changed
+         If you see "Please tell me who you are" > do STEP 1 and 2 again.
+
+STEP 12  echo "Learning Git at ILP workshop" >> README.md
+         git add .
+         git commit -m "add a line"
+         Make a change and save a second version.
+
+STEP 13  git log --oneline
+         See all your saved versions.
+         You should see 2 lines, newest first.
+
+---- PUT IT ON GITHUB ----
+
+STEP 14  In the browser: github.com > sign in > top right  +  > New repository
+         Name: git-practice      Public      Do NOT tick "Add a README"
+         Click "Create repository".
+
+STEP 15  git branch -M main
+         Name your branch "main".
+
+STEP 16  git remote add origin https://github.com/YOUR-USERNAME/git-practice.git
+         Connect your folder to the GitHub repo.  (copy this URL from the GitHub page)
+
+STEP 17  git push -u origin main
+         Upload your code.
+         The FIRST time, a window opens: "Sign in with your browser" > allow.
+         You should see:  Branch 'main' set up to track ...
+
+STEP 18  Refresh the GitHub page. You should see README.md. 🎉
+
+COMMON ERRORS
+  "remote origin already exists"   >  git remote set-url origin <the URL>
+  "src refspec main does not match" >  you forgot to commit. Do STEP 9 and 11.
+  "Permission denied / 403"         >  signed in with the wrong GitHub account. Show your HELP tent.
+
+QUICK TABLE
+  git init   start          git status  what changed        git add .  get ready
+  git commit -m "msg"  save git log --oneline  history      git push  upload

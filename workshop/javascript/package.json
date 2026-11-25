@@ -1,0 +1,9 @@
+{
+  "name": "ilp-workshop-javascript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ILP workshop Node.js labs. Trainer runs npm install once; node_modules goes on the pen drive.",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

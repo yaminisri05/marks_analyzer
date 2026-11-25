@@ -1,0 +1,42 @@
+=====================================================================
+  05 · RUN THE NODE.JS PROJECTS
+=====================================================================
+Projects:   workshop/javascript/1_marks_analyzer   (port 3000)
+            workshop/javascript/2_login            (port 3001)
+            workshop/javascript/3_bank_account     (port 3002)
+
+The Express package is already inside workshop/javascript/node_modules
+(copied from the pen drive). You do NOT need npm install.
+
+---- CHECK ONCE ----
+
+STEP 1   cd ~/Desktop/workshop/javascript
+STEP 2   ls node_modules/express
+         You should see:  index.js  lib  package.json ...
+         Missing? With internet:  npm install      (reads package.json)
+
+---- RUN A PROJECT (example: Marks Analyzer) ----
+
+STEP 3   cd ~/Desktop/workshop/javascript/1_marks_analyzer
+STEP 4   node final.js
+         You should see:  👉 Open http://localhost:3000 in your browser.
+STEP 5   Open Chrome > localhost:3000
+         You see grey boxes: Step 1 ... Step 10, not done yet.
+
+Open a SECOND terminal (the  +  button) for checking steps.
+
+---- DO THE STEPS ----
+
+STEP 6   cd ~/Desktop/workshop/javascript/1_marks_analyzer
+STEP 7   Open step01_header.js. Read the comment. Type your line. Save.
+STEP 8   node step01_header.js
+         You should see:  ✅  Step 1 done
+STEP 9   Refresh the browser (F5).
+STEP 10  Do the same for step02 ... step10.
+
+You do NOT need to restart final.js. Just save and refresh.
+
+STOP THE APP:  Ctrl + C in the terminal where final.js runs.
+
+"Cannot find module 'express'"?  You are not inside workshop/javascript/... Check with pwd.
+"EADDRINUSE"?  Another final.js is running. Stop it with Ctrl + C.

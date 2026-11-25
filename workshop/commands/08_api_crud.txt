@@ -1,0 +1,87 @@
+=====================================================================
+  08 · API CALLS + CRUD  (Git Bash terminal, with curl)
+=====================================================================
+CRUD = the 4 things every app does with data:
+
+   CRUD       HTTP method   SQL                      Example URL
+   Create     POST          INSERT INTO ...          POST   /api/students
+   Read       GET           SELECT ... FROM ...      GET    /api/students
+   Update     PUT           UPDATE ... SET ...       PUT    /api/students/0
+   Delete     DELETE        DELETE FROM ...          DELETE /api/students/0
+
+Status codes you will see:
+   200 OK · 201 Created · 400 Bad request · 401 Wrong login
+   404 Not found · 409 Already exists
+
+BEFORE YOU START
+   Keep the app running in terminal 1 (python final.py / node final.js /
+   mvn -o spring-boot:run). Type these commands in terminal 2.
+
+   Set your port ONCE in terminal 2 (pick your language):
+      Python:  P=5000      Node:  P=3000      Java:  P=8080
+   (Login: 5001 / 3001 / 8081.   Bank: 5002 / 3002 / 8082.)
+
+   Use Git Bash, not PowerShell. PowerShell's "curl" is a different command.
+
+---- PART A · MARKS ANALYZER (CRUD) ----
+
+STEP 1   READ all students  (GET)
+         curl http://localhost:$P/api/students
+         You should see:  [] or a list like [{"id":0,"marks":80,"name":"Ravi"}]
+         Also try it in Chrome:  localhost:5000/api/students
+
+STEP 2   CREATE a student  (POST)
+         curl -X POST http://localhost:$P/api/students -H "Content-Type: application/json" -d '{"name":"Ravi","marks":80}'
+         You should see:  {"id":0,"marks":80,"name":"Ravi"}   and status 201
+
+STEP 3   Create 2 more (change the name and marks), then READ again (STEP 1).
+         Refresh the browser page: the new students are there too.
+
+STEP 4   UPDATE student 0's marks  (PUT)
+         curl -X PUT http://localhost:$P/api/students/0 -H "Content-Type: application/json" -d '{"marks":95}'
+         You should see:  {"id":0,"marks":95,"name":"Ravi"}
+
+STEP 5   DELETE student 0  (DELETE)
+         curl -X DELETE http://localhost:$P/api/students/0
+         You should see:  {"deleted":"Ravi"}
+
+STEP 6   See the status code with -i:
+         curl -i http://localhost:$P/api/students/99 -X DELETE
+         You should see:  HTTP/1.1 404 ... {"error":"student not found"}
+
+STEP 7   Send bad data on purpose:
+         curl -i -X POST http://localhost:$P/api/students -H "Content-Type: application/json" -d '{"name":"Anu"}'
+         You should see:  400 ... {"error":"marks must be a number"}
+
+---- PART B · LOGIN (sign up + login API) ----   (Python P=5001 · Node 3001 · Java 8081)
+
+STEP 8   curl http://localhost:$P/api/users
+STEP 9   Sign up:
+         curl -i -X POST http://localhost:$P/api/signup -H "Content-Type: application/json" -d '{"username":"kiran","password":"kiran123"}'
+         You should see:  201 ... account created
+STEP 10  Sign up again with the same name. You should see:  409 username already taken
+STEP 11  Log in:
+         curl -i -X POST http://localhost:$P/api/login -H "Content-Type: application/json" -d '{"username":"kiran","password":"kiran123"}'
+         You should see:  200 ... Welcome, kiran!
+STEP 12  Log in with a wrong password. You should see:  401
+
+---- PART C · BANK (Day 3 is fine too) ----   (Python P=5002 · Node 3002 · Java 8082)
+
+STEP 13  Open an account on the web page first. Then:
+         curl http://localhost:$P/api/account
+STEP 14  curl -X POST http://localhost:$P/api/deposit -H "Content-Type: application/json" -d '{"amount":1000}'
+STEP 15  curl -i -X POST http://localhost:$P/api/withdraw -H "Content-Type: application/json" -d '{"amount":999999}'
+         You should see:  400 not enough balance
+
+---- PART D · SEE THE DATABASE (Python and Node) ----
+
+STEP 16  ls
+         You should see:  database.db   (SQLite saved your data here)
+STEP 17  In VS Code, install the extension "SQLite Viewer" (by Florian Klampfer).
+         Click database.db: you see the tables and rows, like in the SQL session.
+STEP 18  Stop the app (Ctrl + C) and start it again. Refresh the page.
+         Your students are still there, because they are saved in SQLite.
+
+COMMON ERRORS
+  "Failed to connect"      the app is not running, or the port is wrong. Check echo $P
+  "Unexpected token" / 400 check the quotes: '{"name":"Ravi","marks":80}'  (single outside, double inside)

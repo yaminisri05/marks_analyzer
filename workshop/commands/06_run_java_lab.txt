@@ -1,0 +1,43 @@
+=====================================================================
+  06 · RUN THE JAVA SPRING BOOT PROJECTS
+=====================================================================
+Projects:   workshop/java/1_marks_analyzer   (port 8080)
+            workshop/java/2_login            (port 8081)
+            workshop/java/3_bank_account     (port 8082)
+
+Step files are inside:  src/main/java/com/ilp/<project>/Step01Header.java ...
+
+---- CHECK ONCE ----
+
+STEP 1   java -version        You should see:  version "17" or "21"
+STEP 2   mvn -v               You should see:  Apache Maven 3.9.x
+         Maven missing? See setup/JAVA_SETUP.txt on the pen drive.
+STEP 3   ls ~/.m2/repository/org/springframework/boot
+         You should see folders (spring-boot, spring-boot-starter-web ...)
+         Missing? Copy the .m2 folder from the pen drive (setup/JAVA_SETUP.txt).
+
+---- RUN A PROJECT (example: Marks Analyzer) ----
+
+STEP 4   cd ~/Desktop/workshop/java/1_marks_analyzer
+STEP 5   mvn -o spring-boot:run
+         -o means OFFLINE: use the copied files, no internet needed.
+         First run takes about 30 seconds.
+         You should see:  👉 Open http://localhost:8080 in your browser.
+STEP 6   Open Chrome > localhost:8080
+         You see grey boxes: Step 1 ... Step 10, not done yet.
+
+---- DO THE STEPS ----
+
+STEP 7   Open src/main/java/com/ilp/marks/Step01Header.java
+         Read the comment. Type your line. Save (Ctrl + S).
+STEP 8   Restart the app: click the terminal > Ctrl + C > Up arrow > Enter
+         (Java must compile again. Python and Node do not need this.)
+STEP 9   Refresh the browser. Step 1 turns green.
+         Red box?  Your code has an error. Read the message.
+         "COMPILATION ERROR" in the terminal?  Read the line number it shows,
+         fix that line, save, run again.
+STEP 10  Do the same for Step02 ... Step10.
+
+STOP THE APP:  Ctrl + C   (then type Y and Enter if it asks)
+
+"Port 8080 was already in use"?  Another app is running. Stop it with Ctrl + C.

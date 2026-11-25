@@ -1,0 +1,47 @@
+=====================================================================
+  07 · COPY YOUR FINAL CODE AND PUSH IT TO YOUR GITHUB
+=====================================================================
+Do this after you finish a project. Example below: Python Marks Analyzer
+for a student named Ravi. Change the names for YOUR project and name.
+
+STEP 1   cd ~/Desktop
+         (OneDrive laptops:  cd ~/OneDrive/Desktop)
+
+STEP 2   Copy your project OUT of the workshop folder, into a new folder
+         with your name:
+         cp -r workshop/python/1_marks_analyzer ravi-marks-analyzer
+
+         Node:  cp -r workshop/javascript/1_marks_analyzer ravi-marks-analyzer
+         Java:  cp -r workshop/java/1_marks_analyzer ravi-marks-analyzer
+
+STEP 3   cd ravi-marks-analyzer
+STEP 4   ls
+         You should see your step files and final.py (or final.js / pom.xml).
+
+STEP 5   Tell Git which folders NOT to upload:
+         echo "__pycache__/" > .gitignore
+         echo "node_modules/" >> .gitignore
+         echo "target/" >> .gitignore
+
+STEP 6   git init
+STEP 7   git add .
+STEP 8   git commit -m "Marks Analyzer: all 10 steps done"
+
+STEP 9   In the browser: github.com > + > New repository
+         Name: ravi-marks-analyzer   Public   Do NOT tick "Add a README"
+         Create repository.
+
+STEP 10  git branch -M main
+STEP 11  git remote add origin https://github.com/YOUR-USERNAME/ravi-marks-analyzer.git
+STEP 12  git push -u origin main
+STEP 13  Refresh the GitHub page. Your code is online. 🎉
+         Copy the link. Add it to your resume and LinkedIn.
+
+AFTER MORE CHANGES (later)
+         git add .
+         git commit -m "what I changed"
+         git push
+
+IMPORTANT
+  - Always copy the project OUT of the workshop folder first (STEP 2).
+  - Never run git init inside the workshop folder itself.

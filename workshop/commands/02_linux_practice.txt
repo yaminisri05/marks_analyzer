@@ -1,0 +1,75 @@
+=====================================================================
+  02 · LINUX PRACTICE  (Git Bash terminal)
+=====================================================================
+Type each command, press Enter, check "You should see".
+
+STEP 1   pwd
+         Where am I now?  (print working directory)
+         You should see:  /c/Users/<your name>
+
+STEP 2   ls
+         List the files and folders here.
+         You should see:  Desktop  Documents  Downloads ...
+
+STEP 3   cd Desktop
+         Go into the Desktop folder.  (change directory)
+         If you see "No such file", try:   cd OneDrive/Desktop
+
+STEP 4   pwd
+         You should see:  /c/Users/<your name>/Desktop
+
+STEP 5   mkdir linux-practice
+         Make a new folder.  (make directory)
+
+STEP 6   cd linux-practice
+         Go inside it.
+
+STEP 7   touch notes.txt
+         Make a new empty file.
+
+STEP 8   echo "Hello from <your name>" > notes.txt
+         Write a line into the file.  >  means "write into" (replaces).
+
+STEP 9   cat notes.txt
+         Show what is inside the file.
+         You should see:  Hello from <your name>
+
+STEP 10  echo "Second line" >> notes.txt
+         >>  means "add at the end" (does not replace).
+
+STEP 11  cat notes.txt
+         You should see two lines.
+
+STEP 12  cp notes.txt copy.txt
+         Copy a file.
+
+STEP 13  ls
+         You should see:  copy.txt  notes.txt
+
+STEP 14  mv copy.txt backup.txt
+         Rename (move) a file.
+
+STEP 15  mkdir old
+         mv backup.txt old/
+         Move the file into the folder "old".
+
+STEP 16  ls old
+         You should see:  backup.txt
+
+STEP 17  rm old/backup.txt
+         Delete a file.  CAREFUL: there is no Recycle Bin in the terminal.
+
+STEP 18  cd ..
+         Go back up one folder (to Desktop).   ..  means "the folder above".
+
+STEP 19  ls
+         You should see:  linux-practice  workshop ...
+
+STEP 20  clear
+         Clear the screen.
+
+QUICK TABLE
+  pwd  where am I        ls  list            cd  go into      cd ..  go back
+  mkdir  new folder      touch  new file     cat  show file   cp  copy
+  mv  move / rename      rm  delete          clear  clean screen
+  Tab key  completes names for you.   Up arrow  shows the last command.

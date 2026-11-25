@@ -1,0 +1,45 @@
+=====================================================================
+  04 · RUN THE PYTHON PROJECTS
+=====================================================================
+Projects:   workshop/python/1_marks_analyzer   (port 5000)
+            workshop/python/2_login            (port 5001)
+            workshop/python/3_bank_account     (port 5002)
+
+---- ONE TIME: install Flask ----
+
+STEP 1   cd ~/Desktop/workshop
+STEP 2   pip install flask
+         No internet? Use the pen drive copy:
+         pip install --no-index --find-links=setup/python-wheels flask
+STEP 3   python -c "import flask; print('Flask OK')"
+         You should see:  Flask OK
+
+---- RUN A PROJECT (example: Marks Analyzer) ----
+
+STEP 4   cd ~/Desktop/workshop/python/1_marks_analyzer
+STEP 5   python final.py
+         You should see:  👉 Open http://localhost:5000 in your browser.
+STEP 6   Open Chrome > type  localhost:5000
+         You see grey boxes: Step 1 ... Step 10, not done yet.
+
+Leave this terminal running. Open a SECOND terminal for checking steps:
+         click the  +  in the terminal panel (top right).
+
+---- DO THE STEPS ----
+
+STEP 7   In the second terminal:
+         cd ~/Desktop/workshop/python/1_marks_analyzer
+STEP 8   Open step01_header.py at the top. Read the comment. Type your line.
+         Save (Ctrl + S).
+STEP 9   python step01_header.py
+         You should see:  ✅  Step 1 done
+         If you see ❌ or 🔴, read the message and fix it.
+STEP 10  Refresh the browser (F5). Step 1 is now real, not grey.
+STEP 11  Do the same for step02, step03 ... step10.
+
+You do NOT need to restart final.py. Just save and refresh.
+
+STOP THE APP:  click the terminal where final.py runs > Ctrl + C
+
+"python" not found? Try:  py final.py
+"Address already in use"? Another final.py is running. Stop it with Ctrl + C.

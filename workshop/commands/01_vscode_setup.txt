@@ -1,0 +1,52 @@
+=====================================================================
+  01 · VS CODE SETUP  (do this once)
+=====================================================================
+
+Open the Extensions panel:  Ctrl + Shift + X
+Search each name, click Install.
+
+  FOR EVERYONE
+    1. Error Lens          (by Alexander)   shows errors in red on the same line
+    2. GitLens is NOT needed. Skip it.
+
+  PYTHON LAB
+    3. Python              (by Microsoft)   also installs Pylance
+    3b. SQLite Viewer      (by Florian Klampfer)   open database.db and see the tables
+
+  NODE.JS LAB
+    4. Nothing extra is needed. VS Code already understands JavaScript.
+       Optional: Prettier - Code formatter (by Prettier)
+
+  JAVA LAB
+    5. Extension Pack for Java          (by Microsoft)
+    6. Spring Boot Extension Pack       (by VMware / Broadcom)
+
+NO INTERNET?  Install from the pen drive (setup/vsix). In the Git Bash terminal:
+      cd ~/Desktop/workshop/setup/vsix
+      code --install-extension errorlens.vsix
+      code --install-extension sqlite-viewer.vsix
+      code --install-extension python.vsix          (Python lab only)
+  You should see:  Extension '...' was successfully installed.
+  Then close VS Code and open it again.
+
+  Python extension says it needs other extensions (Pylance, debugpy)?
+  Skip it today. Your code still runs from the terminal:  python final.py
+  Java extensions: install them later at home with internet (they need many files).
+
+TWO SETTINGS THAT HELP
+  7. Auto save:  File > Auto Save  (put a tick). Now you never forget Ctrl + S.
+  8. Git Bash as the default terminal:
+       Ctrl + Shift + P > type "Terminal: Select Default Profile" > Git Bash
+
+CHECK THE TOOLS ARE INSTALLED  (type in the terminal)
+
+  STEP 1   python --version          You should see: Python 3.x.x
+  STEP 2   pip --version             You should see: pip 2x.x from ...
+  STEP 3   node -v                   You should see: v20.x or v22.x
+  STEP 4   npm -v                    You should see: 10.x.x
+  STEP 5   git --version             You should see: git version 2.x
+  STEP 6   java -version             You should see: openjdk version "17" (or 21)   (Java lab only)
+  STEP 7   mvn -v                    You should see: Apache Maven 3.9.x           (Java lab only)
+
+  "command not found"?  Close VS Code fully, open it again, try again.
+  Still not found?  Show your HELP tent.
